@@ -1203,7 +1203,17 @@ confBlocks.optical.robotino = {
         ['BU', '-']
     ]
 };
-
+confBlocks.ibm = {};
+confBlocks.ibm.arduino = {
+    title: 'IBM',
+    sensor: false,
+    inputs: [
+        ['TOKEN', '']
+    ],
+    fixedPorts: [
+        ['Serial', 'SERIAL']
+    ],
+};
 confBlocks.lcdi2c = {};
 confBlocks.lcdi2c.arduino = {
     title: 'LCDI2C',

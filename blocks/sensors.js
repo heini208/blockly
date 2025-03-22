@@ -11,7 +11,6 @@ Blockly.Blocks['sensors_encoder_reset'] = {
      * @constructs sensors_encoder_reset
      * @this.Blockly.Block
      * @param {String|Dropdown}
-     *           MOTORPORT     Dropdown computed from the robot's 'encoder' configuration
      * @returns immediately
      * @memberof Block
      */
@@ -70,3 +69,4 @@ Blockly.Blocks['sensors_gyro_reset'] = {
         });
     }
 };
+
