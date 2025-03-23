@@ -409,6 +409,7 @@ Blockly.Msg.TOOLBOX_ACTION = 'Action';
 Blockly.Msg.TOOLBOX_COMMUNICATION = 'Messages';
 Blockly.Msg.TOOLBOX_PIN = 'Pin';
 Blockly.Msg.TOOLBOX_SENSOR = 'Sensors';
+Blockly.Msg.TOOLBOX_QISKIT = 'QISKIT';
 Blockly.Msg.TOOLBOX_INTEGRATED_SENSOR = 'Integrated Sensors';
 Blockly.Msg.TOOLBOX_CONTROL = 'Control';
 Blockly.Msg.TOOLBOX_LOGIC = 'Logic';

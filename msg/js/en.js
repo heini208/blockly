@@ -2082,6 +2082,7 @@ Blockly.Msg.TOOLBOX_MOVE = "Move";
 Blockly.Msg.TOOLBOX_NN = "Neural Network";
 Blockly.Msg.TOOLBOX_PIN = "Pin";
 Blockly.Msg.TOOLBOX_PROCEDURE = "Functions";
+Blockly.Msg.TOOLBOX_QISKIT = "QISKIT";
 Blockly.Msg.TOOLBOX_SENSOR = "Sensors";
 Blockly.Msg.TOOLBOX_SOUND = "Sounds";
 Blockly.Msg.TOOLBOX_TEXT = "Text";

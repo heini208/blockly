@@ -731,7 +731,7 @@ Blockly.Blocks['robSensors_qiskit_start_job_simulation'] = {
             ],
 
             output: 'Array_Number',
-            colour: Blockly.CAT_SENSOR_RGB,
+            colour: Blockly.CAT_QISKIT_RGB,
             tooltip: '',
         });
     }
@@ -756,7 +756,7 @@ Blockly.Blocks['robSensors_qiskit_start_job_ibm'] = {
             ],
 
             output: 'Number',
-            colour: Blockly.CAT_SENSOR_RGB,
+            colour: Blockly.CAT_QISKIT_RGB,
             tooltip: '',
         });
         this.dependConfig = {
@@ -784,7 +784,7 @@ Blockly.Blocks['robSensors_qiskit_job_status'] = {
             },
             ],
             output: 'Number',
-            colour: Blockly.CAT_SENSOR_RGB,
+            colour: Blockly.CAT_QISKIT_RGB,
             tooltip: '',
         });
         this.dependConfig = {
@@ -812,7 +812,7 @@ Blockly.Blocks['robSensors_qiskit_job_result'] = {
             },
             ],
             output: 'Array_Number',
-            colour: Blockly.CAT_SENSOR_RGB,
+            colour: Blockly.CAT_QISKIT_RGB,
             tooltip: '',
         });
         this.dependConfig = {

@@ -2082,6 +2082,7 @@ Blockly.Msg.TOOLBOX_MOVE = "移动";
 Blockly.Msg.TOOLBOX_NN = "Neural Network";  // untranslated
 Blockly.Msg.TOOLBOX_PIN = "引脚";
 Blockly.Msg.TOOLBOX_PROCEDURE = "函数";
+Blockly.Msg.TOOLBOX_QISKIT = "QISKIT";  // untranslated
 Blockly.Msg.TOOLBOX_SENSOR = "传感器";
 Blockly.Msg.TOOLBOX_SOUND = "声音";
 Blockly.Msg.TOOLBOX_TEXT = "文本";

@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2025-03-22 23:38:26.889973",
+		"lastupdated": "2025-03-23 02:29:08.752179",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -700,6 +700,7 @@
 	"TOOLBOX_COMMUNICATION": "Messages",
 	"TOOLBOX_PIN": "Pin",
 	"TOOLBOX_SENSOR": "Sensors",
+	"TOOLBOX_QISKIT": "QISKIT",
 	"TOOLBOX_INTEGRATED_SENSOR": "Integrated Sensors",
 	"TOOLBOX_CONTROL": "Control",
 	"TOOLBOX_LOGIC": "Logic",
