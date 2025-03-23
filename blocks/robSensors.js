@@ -755,7 +755,7 @@ Blockly.Blocks['robSensors_qiskit_start_job_ibm'] = {
             },
             ],
 
-            output: 'Number',
+            output: 'String',
             colour: Blockly.CAT_QISKIT_RGB,
             tooltip: '',
         });
@@ -783,7 +783,7 @@ Blockly.Blocks['robSensors_qiskit_job_status'] = {
                 align: 'RIGHT'
             },
             ],
-            output: 'Number',
+            output: 'String',
             colour: Blockly.CAT_QISKIT_RGB,
             tooltip: '',
         });
