@@ -68,6 +68,10 @@ Blockly.HSV_VALUE = 0.65;
  */
 Blockly.CAT_NEURAL_NETWORK_RGB = '#33B8CA';
 /**
+ * The rgb value for block colours in qiskit category.
+ */
+Blockly.CAT_QISKIT_RGB = '#B5D40A';
+/**
  * The rgb value for block colours in logic category.
  */
 Blockly.CAT_LOGIC_RGB = '#33B8CA';
@@ -149,6 +153,7 @@ Blockly.CAT_ICON['TOOLBOX_PIN'] = 'pin-outline';
 Blockly.CAT_ICON['TOOLBOX_SOUND'] = 'volume-up';
 Blockly.CAT_ICON['TOOLBOX_LIGHT'] = 'led';
 Blockly.CAT_ICON['TOOLBOX_SENSOR'] = 'sensor';
+Blockly.CAT_ICON['TOOLBOX_QISKIT'] = 'sensor';
 Blockly.CAT_ICON['TOOLBOX_CONTROL'] = 'flow-children';
 Blockly.CAT_ICON['TOOLBOX_DECISION'] = 'flow-merge';
 Blockly.CAT_ICON['TOOLBOX_WAIT'] = 'wait';

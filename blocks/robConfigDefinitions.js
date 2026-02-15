@@ -2288,18 +2288,36 @@ confBlocks.gps.sensebox = {
     sensor: true
 };
 
-confBlocks.fourdigitdisplay = {};
-confBlocks.fourdigitdisplay.calliope = {
-    title: 'FOURDIGITDISPLAY',
+confBlocks.wifiuart = {};
+confBlocks.wifiuart.calliope = {
+    title: 'WIFIUART',
+    inputs: [
+        ['SSID', 'MyWiFi'],
+        ['PASSWORD', 'password'],
+        ['IP', '192.168.1.1'],
+        ['PORT', '5000']
+    ],
+    sensor: false,
     ports: [
         ['pin', 'PIN1']
     ],
     pins: function(a) {
         return [
-            ['A1', '5']
+            ['A1', '1']
         ];
     },
-    sensor: false
+};
+
+confBlocks.ibm = {};
+confBlocks.ibm.calliope = {
+    title: 'IBM',
+    sensor: false,
+    inputs: [
+        ['TOKEN', '']
+    ],
+    fixedPorts: [
+        ['WIFI', 'WIFI']
+    ],
 };
 
 confBlocks.ledbar = {};

@@ -716,6 +716,113 @@ Blockly.Blocks['robSensors_get_line_colour_camera_txt4'] = {
 
 };
 
+Blockly.Blocks['robSensors_qiskit_start_job_simulation'] = {
+    init: function() {
+
+        this.jsonInit({
+            message0: 'Simulate Superposition',
+            message1: 'Number of Qbits' + '%1',
+            args1: [{
+                type: 'input_value',
+                name: 'QBITS',
+                check: 'Number',
+                align: 'RIGHT'
+            },
+            ],
+
+            output: 'Array_Number',
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: '',
+        });
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_start_job_ibm'] = {
+    init: function() {
+        var ports = getConfigPorts('ibm');
+        this.hide = {};
+        this.hide.name = 'SENSORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.jsonInit({
+            message0: 'Start Job On IBM Computer',
+            message1: 'Number of Qbits' + '%1',
+            args1: [{
+                type: 'input_value',
+                name: 'QBITS',
+                check: 'Number',
+                align: 'RIGHT'
+            },
+            ],
+
+            output: 'String',
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: '',
+        });
+        this.dependConfig = {
+            'type': 'ibm',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_job_status'] = {
+    init: function() {
+        var ports = getConfigPorts('ibm');
+        this.hide = {};
+        this.hide.name = 'SENSORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.setBlocking(true);
+        this.jsonInit({
+            message0: Blockly.Msg.GET + ' job status ID %1',
+            args0: [{
+                type: 'input_value',
+                name: 'ID',
+                check: 'String',
+                align: 'RIGHT'
+            },
+            ],
+            output: 'String',
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: '',
+        });
+        this.dependConfig = {
+            'type': 'ibm',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_job_result'] = {
+    init: function() {
+        var ports = getConfigPorts('ibm');
+        this.hide = {};
+        this.hide.name = 'SENSORPORT';
+        this.hide.port = true;
+        this.hide.value = ports.getValue();
+        this.setBlocking(true);
+        this.jsonInit({
+            message0: Blockly.Msg.GET + ' job result ID %1',
+            args0: [{
+                type: 'input_value',
+                name: 'ID',
+                check: 'String',
+                align: 'RIGHT'
+            },
+            ],
+            output: 'Array_Number',
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: '',
+        });
+        this.dependConfig = {
+            'type': 'ibm',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+
 Blockly.Blocks['robSensors_generic'] = {
     /*- Generic sensor definition. Will create e.g. the following xml:
      *

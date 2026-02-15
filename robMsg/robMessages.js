@@ -432,6 +432,7 @@ Blockly.Msg.TOOLBOX_ANIMATION = 'Animation';
 Blockly.Msg.TOOLBOX_VISION = 'Vision';
 Blockly.Msg.TOOLBOX_CLEANING = 'Cleaning';
 Blockly.Msg.TOOLBOX_ADD_ON = 'Add-ons';
+Blockly.Msg.TOOLBOX_QISKIT = 'QISKIT';
 //
 /// These texts are used outside of Blockly, but are placed in the Blockly namespace
 Blockly.Msg.MENU_EDIT = 'edit';
@@ -1520,6 +1521,10 @@ Blockly.Msg.SLOT_RIGHT_YAW_PITCH = 'right yaw pitch';
 
 Blockly.Msg.FOURDIGITDISPLAY = '4-Digit Display';
 Blockly.Msg.ACTION_FOURDIGITDISPLAY = Blockly.Msg.FOURDIGITDISPLAY;
+Blockly.Msg.ACTION_WIFIUART = 'Grove UART WiFi V2';
+Blockly.Msg.WIFIUART_TOOLTIP = '';
+Blockly.Msg.ACTION_IBM = 'IBM quantum platform';
+Blockly.Msg.IBM_TOOLTIP = 'Connect the lab to your IBM account.';
 Blockly.Msg.FOURDIGITDISPLAY_TOOLTIP = 'Represents a Grove 4-Digit Display by Seeed';
 Blockly.Msg.FOURDIGITDISPLAY_SHOW_TOOLTIP = 'Displays a number [0-9999] on the 4-Digit Display. Position [0-3] represents the starting position of the number';
 Blockly.Msg.FOURDIGITDISPLAY_CLEAR_TOOLTIP = 'Clears the 4-Digit Display.';
@@ -1703,6 +1708,11 @@ Blockly.Msg.MODE_TIME = 'time';
 Blockly.Msg.SENSOR_UNIT_METER = 'm';
 Blockly.Msg.SENSOR_UNIT_SPEED = 'km/h';
 Blockly.Msg.ADDRESS = 'address';
+Blockly.Msg.SSID = 'SSID';
+Blockly.Msg.PASSWORD = 'Password';
+Blockly.Msg.IP = 'IP';
+Blockly.Msg.PORT = 'Port';
+Blockly.Msg.TOKEN = 'token';
 
 Blockly.Msg.ORA_GROUP_TO_SHARE_DOES_NOT_EXIST = 'You do not own a user group with the name you entered. <br />Try again with a different name!';
 Blockly.Msg.ORA_GROUP_MEMBER_SHARE_RESTRICTION_EXCEEDED = 'You can only share programs with other members of your user group. The owner of your user group can automatically read your programs.';
