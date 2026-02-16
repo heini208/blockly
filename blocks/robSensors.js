@@ -718,7 +718,7 @@ Blockly.Blocks['robSensors_get_line_colour_camera_txt4'] = {
 
 Blockly.Blocks['robSensors_qiskit_start_job_simulation'] = {
     init: function() {
-
+        var ports = getConfigPorts('qiskit');
         this.jsonInit({
             message0: 'Simulate Superposition',
             message1: 'Number of Qbits' + '%1',
@@ -734,12 +734,16 @@ Blockly.Blocks['robSensors_qiskit_start_job_simulation'] = {
             colour: Blockly.CAT_QISKIT_RGB,
             tooltip: '',
         });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
     }
 };
 
 Blockly.Blocks['robSensors_qiskit_start_job_ibm'] = {
     init: function() {
-        var ports = getConfigPorts('ibm');
+        var ports = getConfigPorts('qiskit');
         this.hide = {};
         this.hide.name = 'SENSORPORT';
         this.hide.port = true;
@@ -760,7 +764,7 @@ Blockly.Blocks['robSensors_qiskit_start_job_ibm'] = {
             tooltip: '',
         });
         this.dependConfig = {
-            'type': 'ibm',
+            'type': 'qiskit',
             'dropDown': 'hide'
         };
     }
@@ -768,7 +772,7 @@ Blockly.Blocks['robSensors_qiskit_start_job_ibm'] = {
 
 Blockly.Blocks['robSensors_qiskit_job_status'] = {
     init: function() {
-        var ports = getConfigPorts('ibm');
+        var ports = getConfigPorts('qiskit');
         this.hide = {};
         this.hide.name = 'SENSORPORT';
         this.hide.port = true;
@@ -788,7 +792,7 @@ Blockly.Blocks['robSensors_qiskit_job_status'] = {
             tooltip: '',
         });
         this.dependConfig = {
-            'type': 'ibm',
+            'type': 'qiskit',
             'dropDown': 'hide'
         };
     }
@@ -796,7 +800,7 @@ Blockly.Blocks['robSensors_qiskit_job_status'] = {
 
 Blockly.Blocks['robSensors_qiskit_job_result'] = {
     init: function() {
-        var ports = getConfigPorts('ibm');
+        var ports = getConfigPorts('qiskit');
         this.hide = {};
         this.hide.name = 'SENSORPORT';
         this.hide.port = true;
@@ -816,7 +820,7 @@ Blockly.Blocks['robSensors_qiskit_job_result'] = {
             tooltip: '',
         });
         this.dependConfig = {
-            'type': 'ibm',
+            'type': 'qiskit',
             'dropDown': 'hide'
         };
     }

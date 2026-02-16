@@ -2303,21 +2303,30 @@ confBlocks.wifiuart.calliope = {
     ],
     pins: function(a) {
         return [
-            ['A1', '1']
+            ['A1', '5']
         ];
     },
 };
 
-confBlocks.ibm = {};
-confBlocks.ibm.calliope = {
-    title: 'IBM',
+confBlocks.qiskit = {};
+confBlocks.qiskit.calliope = {
+    title: 'QISKIT',
     sensor: false,
     inputs: [
-        ['TOKEN', '']
+        ['SSID', 'MyWiFi'],
+        ['PASSWORD', 'password'],
+        ['IP', '192.168.1.1'],
+        ['PORT', '5000'],
+        ['IBMTOKEN', '']
     ],
-    fixedPorts: [
-        ['WIFI', 'WIFI']
+    ports: [
+        ['pin', 'PIN1']
     ],
+    pins: function(a) {
+        return [
+            ['A1', '5']
+        ];
+    },
 };
 
 confBlocks.ledbar = {};
