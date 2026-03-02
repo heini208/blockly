@@ -503,11 +503,39 @@
         <block type='robSensors_moisture_getSample'></block>
     </category>
     <category name ='TOOLBOX_QISKIT' svg='true'>
-        <block type='robSensors_qiskit_start_job_simulation'></block>
-        <block type='robSensors_qiskit_start_job_ibm'></block>
-        <block type='robSensors_qiskit_job_status'></block>
-        <block type='robSensors_qiskit_job_result'></block>
-    </category>>
+        <category name ='TOOLBOX_RNG' svg='true'>
+            <block type='robSensors_qiskit_start_job_simulation'></block>
+            <block type='robSensors_qiskit_start_job_ibm'></block>
+        </category>
+        <category name ='TOOLBOX_CIRCUITS' svg='true'>
+            <block type='robSensors_qiskit_create_circuit'></block>
+            <block type='robActions_qiskit_delete_circuit'></block>
+            <block type='robActions_qiskit_reset_circuit'></block>
+            <block type='robSensors_qiskit_clone_circuit'></block>
+            <block type='robSensors_qiskit_measure'></block>
+            <block type='robSensors_qiskit_measure_all'></block>
+        </category>
+        <category name ='TOOLBOX_GATES' svg='true'>
+            <block type='robActions_qiskit_x'></block>
+            <block type='robActions_qiskit_h'></block>
+            <block type='robActions_qiskit_z'></block>
+            <block type='robActions_qiskit_y'></block>
+            <block type='robActions_qiskit_rx'></block>
+            <block type='robActions_qiskit_ry'></block>
+            <block type='robActions_qiskit_rz'></block>
+            <block type='robActions_qiskit_cx'></block>
+            <block type='robActions_qiskit_cz'></block>
+            <block type='robActions_qiskit_swap'></block>
+        </category>
+        <category name ='TOOLBOX_JOBS' svg='true'>
+            <block type='robSensors_qiskit_run_sim'></block>
+            <block type='robSensors_qiskit_run_ibm'></block>
+            <block type='robSensors_qiskit_job_result_sim'></block>
+            <block type='robSensors_qiskit_job_status'></block>
+            <block type='robSensors_qiskit_job_result'></block>
+        </category>
+
+        </category>>
     <category name='TOOLBOX_CONTROL' svg='true'>
         <category name='TOOLBOX_DECISION' svg='true'>
             <block type='robControls_if'></block>

@@ -432,7 +432,11 @@ Blockly.Msg.TOOLBOX_ANIMATION = 'Animation';
 Blockly.Msg.TOOLBOX_VISION = 'Vision';
 Blockly.Msg.TOOLBOX_CLEANING = 'Cleaning';
 Blockly.Msg.TOOLBOX_ADD_ON = 'Add-ons';
-Blockly.Msg.TOOLBOX_QISKIT = 'QISKIT';
+Blockly.Msg.TOOLBOX_QISKIT = 'Qiskit';
+Blockly.Msg.TOOLBOX_RNG = 'Random Numbers';
+Blockly.Msg.TOOLBOX_CIRCUITS = 'Circuits';
+Blockly.Msg.TOOLBOX_GATES = 'Gates'
+Blockly.Msg.TOOLBOX_JOBS = 'Jobs'
 //
 /// These texts are used outside of Blockly, but are placed in the Blockly namespace
 Blockly.Msg.MENU_EDIT = 'edit';

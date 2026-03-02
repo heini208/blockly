@@ -826,6 +826,571 @@ Blockly.Blocks['robSensors_qiskit_job_result'] = {
     }
 };
 
+Blockly.Blocks['robSensors_qiskit_create_circuit'] = {
+    init: function() {
+        var ports = getConfigPorts('qiskit');
+        this.jsonInit({
+            message0: 'Create quantum circuit',
+            message1: 'Number of qubits %1',
+            args1: [{
+                type: 'input_value',
+                name: 'NUM_QUBITS',
+                check: 'Number',
+                align: 'RIGHT'
+            }],
+            message2: 'Number of classical bits %1',
+            args2: [{
+                type: 'input_value',
+                name: 'NUM_CLBITS',
+                check: 'Number',
+                align: 'RIGHT'
+            }],
+
+            output: 'String',   // circuit_id
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Creates a new quantum circuit and returns its circuit ID.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_delete_circuit'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Delete circuit %1',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Deletes the given quantum circuit from the server.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_reset_circuit'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Reset circuit %1',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Resets all gates and measurements in the given quantum circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_clone_circuit'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Clone circuit %1',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            output: 'String',   // returns new circuit_id
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Clones the given quantum circuit and returns a new circuit ID.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_x'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply X gate on circuit %1 qubit %2',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'QUBIT',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Applies an X (Pauli-X) gate to the specified qubit in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_h'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply H gate on circuit %1 qubit %2',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'QUBIT',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Applies a Hadamard gate to the specified qubit in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_z'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply Z gate on circuit %1 qubit %2',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'QUBIT',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Applies a Z (Pauli-Z) gate to the specified qubit in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_y'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply Y gate on circuit %1 qubit %2',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'QUBIT',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Applies a Y (Pauli-Y) gate to the specified qubit in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_rx'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply RX gate on circuit %1 qubit %2 angle %3',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'QUBIT',
+                    check: 'Number',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'ANGLE',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Applies an RX rotation gate (around X-axis) to the specified qubit in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_ry'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply RY gate on circuit %1 qubit %2 angle %3',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'QUBIT',
+                    check: 'Number',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'ANGLE',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Applies an RY rotation gate (around Y-axis) to the specified qubit in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_rz'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply RZ gate on circuit %1 qubit %2 angle %3',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'QUBIT',
+                    check: 'Number',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'ANGLE',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Applies an RZ rotation gate (around Z-axis) to the specified qubit in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_cx'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply CX gate on circuit %1 control qubit %2 target qubit %3',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'CONTROL',
+                    check: 'Number',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'TARGET',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Applies a controlled-X (CNOT) gate to the specified qubits in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_cz'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply CZ gate on circuit %1 control qubit %2 target qubit %3',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'CONTROL',
+                    check: 'Number',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'TARGET',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Applies a controlled-Z (CZ) gate to the specified qubits in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robActions_qiskit_swap'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Apply SWAP gate on circuit %1 qubit %2 qubit %3',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'Q1',
+                    check: 'Number',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'Q2',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            previousStatement: null,
+            nextStatement: null,
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Swaps the states of the two specified qubits in the given circuit.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_measure'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Measure qubit %1 of circuit %2 into classical bit %3',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'QUBIT',
+                    check: 'Number',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'CBIT',
+                    check: 'Number',
+                    align: 'RIGHT'
+                }
+            ],
+            output: 'Number',  // returns 0 or 1
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Measures the specified qubit and stores the result in the given classical bit. Returns 0 or 1.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_measure_all'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Measure all qubits of circuit %1',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            output: 'Array_Number',  // returns array of 0s and 1s
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Measures all qubits in the given circuit and returns an array of results (0 or 1 for each qubit).',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_run_sim'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Run circuit %1 on simulator',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            output: 'String',  // returns job ID
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Executes the specified circuit on a simulator and returns a job ID for tracking results.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_run_ibm'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Run circuit %1 on IBM backend',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'CIRCUIT_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            output: 'String',  // returns job ID
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Executes the specified circuit on an IBM backend and returns a job ID for tracking results.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_job_result_sim'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Get simulation job result for job %1',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'JOB_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            output: 'Array_Number',  // returns array of measurement results
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Returns the results of the specified simulation job as an array of 0s and 1s.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
 
 Blockly.Blocks['robSensors_generic'] = {
     /*- Generic sensor definition. Will create e.g. the following xml:
