@@ -1288,9 +1288,10 @@ Blockly.Blocks['robSensors_qiskit_measure'] = {
                     align: 'RIGHT'
                 }
             ],
-            output: 'Number',  // returns 0 or 1
+            previousStatement: null,
+            nextStatement: null,
             colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Measures the specified qubit and stores the result in the given classical bit. Returns 0 or 1.',
+            tooltip: 'Adds a measurement operation to the specified qubit of the circuit and stores it in the given classical bit.',
         });
         this.dependConfig = {
             'type': 'qiskit',
@@ -1311,9 +1312,10 @@ Blockly.Blocks['robSensors_qiskit_measure_all'] = {
                     align: 'RIGHT'
                 }
             ],
-            output: 'Array_Number',  // returns array of 0s and 1s
+            previousStatement: null,
+            nextStatement: null,
             colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Measures all qubits in the given circuit and returns an array of results (0 or 1 for each qubit).',
+            tooltip: 'Adds measurement operations to all qubits in the given circuit.',
         });
         this.dependConfig = {
             'type': 'qiskit',
