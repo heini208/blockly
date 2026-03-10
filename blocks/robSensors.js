@@ -1370,10 +1370,11 @@ Blockly.Blocks['robSensors_qiskit_run_ibm'] = {
     }
 };
 
-Blockly.Blocks['robSensors_qiskit_job_result_sim'] = {
+
+Blockly.Blocks['robSensors_qiskit_job_result_sample'] = {
     init: function() {
         this.jsonInit({
-            message0: 'Get simulation job result for job %1',
+            message0: 'Get job sample for job %1',
             args0: [
                 {
                     type: 'input_value',
@@ -1384,7 +1385,76 @@ Blockly.Blocks['robSensors_qiskit_job_result_sim'] = {
             ],
             output: 'Array_Number',  // returns array of measurement results
             colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Returns the results of the specified simulation job as an array of 0s and 1s.',
+            tooltip: 'Returns the a single shot of the result of the specified job as an array of 0s and 1s.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_job_result_states'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Get job states for job %1',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'JOB_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            output: 'Array_String',
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Returns all bit-pattern states (e.g. "00", "01", "10", "11") for the specified job as a list of strings. The order matches GET_JOB_COUNTS and GET_JOB_PROBABILITIES.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_job_result_counts'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Get job counts for job %1',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'JOB_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            output: 'Array_Number',
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Returns the raw measurement counts for each state of the specified job as a list of numbers. The order matches GET_JOB_STATES and GET_JOB_PROBABILITIES.',
+        });
+        this.dependConfig = {
+            'type': 'qiskit',
+            'dropDown': 'hide'
+        };
+    }
+};
+
+Blockly.Blocks['robSensors_qiskit_job_result_probabilities'] = {
+    init: function() {
+        this.jsonInit({
+            message0: 'Get job probabilities for job %1',
+            args0: [
+                {
+                    type: 'input_value',
+                    name: 'JOB_ID',
+                    check: 'String',
+                    align: 'RIGHT'
+                }
+            ],
+            output: 'Array_String',
+            colour: Blockly.CAT_QISKIT_RGB,
+            tooltip: 'Returns the probability of each state for the specified job as a list of numbers (0.0 to 1.0). The order matches GET_JOB_STATES and GET_JOB_COUNTS.',
         });
         this.dependConfig = {
             'type': 'qiskit',
