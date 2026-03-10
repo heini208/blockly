@@ -798,34 +798,6 @@ Blockly.Blocks['robSensors_qiskit_job_status'] = {
     }
 };
 
-Blockly.Blocks['robSensors_qiskit_job_result'] = {
-    init: function() {
-        var ports = getConfigPorts('qiskit');
-        this.hide = {};
-        this.hide.name = 'SENSORPORT';
-        this.hide.port = true;
-        this.hide.value = ports.getValue();
-        this.setBlocking(true);
-        this.jsonInit({
-            message0: Blockly.Msg.GET + ' job result ID %1',
-            args0: [{
-                type: 'input_value',
-                name: 'ID',
-                check: 'String',
-                align: 'RIGHT'
-            },
-            ],
-            output: 'Array_Number',
-            colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: '',
-        });
-        this.dependConfig = {
-            'type': 'qiskit',
-            'dropDown': 'hide'
-        };
-    }
-};
-
 Blockly.Blocks['robSensors_qiskit_create_circuit'] = {
     init: function() {
         var ports = getConfigPorts('qiskit');
@@ -928,11 +900,22 @@ Blockly.Blocks['robSensors_qiskit_clone_circuit'] = {
     }
 };
 
-Blockly.Blocks['robActions_qiskit_x'] = {
+
+Blockly.Blocks['robActions_qiskit_single_gate'] = {
     init: function() {
         this.jsonInit({
-            message0: 'Apply X gate on circuit %1 qubit %2',
+            message0: 'Apply %1 gate on circuit %2 qubit %3',
             args0: [
+                {
+                    type: 'field_dropdown',
+                    name: 'GATE',
+                    options: [
+                        ['X', 'X'],
+                        ['Y', 'Y'],
+                        ['Z', 'Z'],
+                        ['H', 'H']
+                    ]
+                },
                 {
                     type: 'input_value',
                     name: 'CIRCUIT_ID',
@@ -949,7 +932,7 @@ Blockly.Blocks['robActions_qiskit_x'] = {
             previousStatement: null,
             nextStatement: null,
             colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Applies an X (Pauli-X) gate to the specified qubit in the given circuit.',
+            tooltip: 'Applies the selected single-qubit gate (X, Y, Z, or H) to the specified qubit in the given circuit.',
         });
         this.dependConfig = {
             'type': 'qiskit',
@@ -958,101 +941,20 @@ Blockly.Blocks['robActions_qiskit_x'] = {
     }
 };
 
-Blockly.Blocks['robActions_qiskit_h'] = {
+Blockly.Blocks['robActions_qiskit_rotation_gate'] = {
     init: function() {
         this.jsonInit({
-            message0: 'Apply H gate on circuit %1 qubit %2',
+            message0: 'Apply %1 gate on circuit %2 qubit %3 angle %4',
             args0: [
                 {
-                    type: 'input_value',
-                    name: 'CIRCUIT_ID',
-                    check: 'String',
-                    align: 'RIGHT'
+                    type: 'field_dropdown',
+                    name: 'GATE',
+                    options: [
+                        ['RX', 'RX'],
+                        ['RY', 'RY'],
+                        ['RZ', 'RZ']
+                    ]
                 },
-                {
-                    type: 'input_value',
-                    name: 'QUBIT',
-                    check: 'Number',
-                    align: 'RIGHT'
-                }
-            ],
-            previousStatement: null,
-            nextStatement: null,
-            colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Applies a Hadamard gate to the specified qubit in the given circuit.',
-        });
-        this.dependConfig = {
-            'type': 'qiskit',
-            'dropDown': 'hide'
-        };
-    }
-};
-
-Blockly.Blocks['robActions_qiskit_z'] = {
-    init: function() {
-        this.jsonInit({
-            message0: 'Apply Z gate on circuit %1 qubit %2',
-            args0: [
-                {
-                    type: 'input_value',
-                    name: 'CIRCUIT_ID',
-                    check: 'String',
-                    align: 'RIGHT'
-                },
-                {
-                    type: 'input_value',
-                    name: 'QUBIT',
-                    check: 'Number',
-                    align: 'RIGHT'
-                }
-            ],
-            previousStatement: null,
-            nextStatement: null,
-            colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Applies a Z (Pauli-Z) gate to the specified qubit in the given circuit.',
-        });
-        this.dependConfig = {
-            'type': 'qiskit',
-            'dropDown': 'hide'
-        };
-    }
-};
-
-Blockly.Blocks['robActions_qiskit_y'] = {
-    init: function() {
-        this.jsonInit({
-            message0: 'Apply Y gate on circuit %1 qubit %2',
-            args0: [
-                {
-                    type: 'input_value',
-                    name: 'CIRCUIT_ID',
-                    check: 'String',
-                    align: 'RIGHT'
-                },
-                {
-                    type: 'input_value',
-                    name: 'QUBIT',
-                    check: 'Number',
-                    align: 'RIGHT'
-                }
-            ],
-            previousStatement: null,
-            nextStatement: null,
-            colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Applies a Y (Pauli-Y) gate to the specified qubit in the given circuit.',
-        });
-        this.dependConfig = {
-            'type': 'qiskit',
-            'dropDown': 'hide'
-        };
-    }
-};
-
-Blockly.Blocks['robActions_qiskit_rx'] = {
-    init: function() {
-        this.jsonInit({
-            message0: 'Apply RX gate on circuit %1 qubit %2 angle %3',
-            args0: [
                 {
                     type: 'input_value',
                     name: 'CIRCUIT_ID',
@@ -1075,7 +977,7 @@ Blockly.Blocks['robActions_qiskit_rx'] = {
             previousStatement: null,
             nextStatement: null,
             colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Applies an RX rotation gate (around X-axis) to the specified qubit in the given circuit.',
+            tooltip: 'Applies the selected rotation gate (RX, RY, or RZ) to the specified qubit in the given circuit with the given angle.',
         });
         this.dependConfig = {
             'type': 'qiskit',
@@ -1084,83 +986,20 @@ Blockly.Blocks['robActions_qiskit_rx'] = {
     }
 };
 
-Blockly.Blocks['robActions_qiskit_ry'] = {
+Blockly.Blocks['robActions_qiskit_two_qubit_gate'] = {
     init: function() {
         this.jsonInit({
-            message0: 'Apply RY gate on circuit %1 qubit %2 angle %3',
+            message0: 'Apply %1 gate on circuit %2 control qubit %3 target qubit %4',
             args0: [
                 {
-                    type: 'input_value',
-                    name: 'CIRCUIT_ID',
-                    check: 'String',
-                    align: 'RIGHT'
+                    type: 'field_dropdown',
+                    name: 'GATE',
+                    options: [
+                        ['CX', 'CX'],
+                        ['CZ', 'CZ'],
+                        ['SWAP', 'SWAP']
+                    ]
                 },
-                {
-                    type: 'input_value',
-                    name: 'QUBIT',
-                    check: 'Number',
-                    align: 'RIGHT'
-                },
-                {
-                    type: 'input_value',
-                    name: 'ANGLE',
-                    check: 'Number',
-                    align: 'RIGHT'
-                }
-            ],
-            previousStatement: null,
-            nextStatement: null,
-            colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Applies an RY rotation gate (around Y-axis) to the specified qubit in the given circuit.',
-        });
-        this.dependConfig = {
-            'type': 'qiskit',
-            'dropDown': 'hide'
-        };
-    }
-};
-
-Blockly.Blocks['robActions_qiskit_rz'] = {
-    init: function() {
-        this.jsonInit({
-            message0: 'Apply RZ gate on circuit %1 qubit %2 angle %3',
-            args0: [
-                {
-                    type: 'input_value',
-                    name: 'CIRCUIT_ID',
-                    check: 'String',
-                    align: 'RIGHT'
-                },
-                {
-                    type: 'input_value',
-                    name: 'QUBIT',
-                    check: 'Number',
-                    align: 'RIGHT'
-                },
-                {
-                    type: 'input_value',
-                    name: 'ANGLE',
-                    check: 'Number',
-                    align: 'RIGHT'
-                }
-            ],
-            previousStatement: null,
-            nextStatement: null,
-            colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Applies an RZ rotation gate (around Z-axis) to the specified qubit in the given circuit.',
-        });
-        this.dependConfig = {
-            'type': 'qiskit',
-            'dropDown': 'hide'
-        };
-    }
-};
-
-Blockly.Blocks['robActions_qiskit_cx'] = {
-    init: function() {
-        this.jsonInit({
-            message0: 'Apply CX gate on circuit %1 control qubit %2 target qubit %3',
-            args0: [
                 {
                     type: 'input_value',
                     name: 'CIRCUIT_ID',
@@ -1183,79 +1022,7 @@ Blockly.Blocks['robActions_qiskit_cx'] = {
             previousStatement: null,
             nextStatement: null,
             colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Applies a controlled-X (CNOT) gate to the specified qubits in the given circuit.',
-        });
-        this.dependConfig = {
-            'type': 'qiskit',
-            'dropDown': 'hide'
-        };
-    }
-};
-
-Blockly.Blocks['robActions_qiskit_cz'] = {
-    init: function() {
-        this.jsonInit({
-            message0: 'Apply CZ gate on circuit %1 control qubit %2 target qubit %3',
-            args0: [
-                {
-                    type: 'input_value',
-                    name: 'CIRCUIT_ID',
-                    check: 'String',
-                    align: 'RIGHT'
-                },
-                {
-                    type: 'input_value',
-                    name: 'CONTROL',
-                    check: 'Number',
-                    align: 'RIGHT'
-                },
-                {
-                    type: 'input_value',
-                    name: 'TARGET',
-                    check: 'Number',
-                    align: 'RIGHT'
-                }
-            ],
-            previousStatement: null,
-            nextStatement: null,
-            colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Applies a controlled-Z (CZ) gate to the specified qubits in the given circuit.',
-        });
-        this.dependConfig = {
-            'type': 'qiskit',
-            'dropDown': 'hide'
-        };
-    }
-};
-
-Blockly.Blocks['robActions_qiskit_swap'] = {
-    init: function() {
-        this.jsonInit({
-            message0: 'Apply SWAP gate on circuit %1 qubit %2 qubit %3',
-            args0: [
-                {
-                    type: 'input_value',
-                    name: 'CIRCUIT_ID',
-                    check: 'String',
-                    align: 'RIGHT'
-                },
-                {
-                    type: 'input_value',
-                    name: 'Q1',
-                    check: 'Number',
-                    align: 'RIGHT'
-                },
-                {
-                    type: 'input_value',
-                    name: 'Q2',
-                    check: 'Number',
-                    align: 'RIGHT'
-                }
-            ],
-            previousStatement: null,
-            nextStatement: null,
-            colour: Blockly.CAT_QISKIT_RGB,
-            tooltip: 'Swaps the states of the two specified qubits in the given circuit.',
+            tooltip: 'Applies the selected two-qubit gate (CX, CZ, or SWAP) to the specified qubits in the given circuit.',
         });
         this.dependConfig = {
             'type': 'qiskit',
