@@ -153,7 +153,6 @@ Blockly.CAT_ICON['TOOLBOX_PIN'] = 'pin-outline';
 Blockly.CAT_ICON['TOOLBOX_SOUND'] = 'volume-up';
 Blockly.CAT_ICON['TOOLBOX_LIGHT'] = 'led';
 Blockly.CAT_ICON['TOOLBOX_SENSOR'] = 'sensor';
-Blockly.CAT_ICON['TOOLBOX_QISKIT'] = 'sensor';
 Blockly.CAT_ICON['TOOLBOX_CONTROL'] = 'flow-children';
 Blockly.CAT_ICON['TOOLBOX_DECISION'] = 'flow-merge';
 Blockly.CAT_ICON['TOOLBOX_WAIT'] = 'wait';
@@ -169,8 +168,11 @@ Blockly.CAT_ICON['TOOLBOX_VARIABLE'] = 'variable';
 Blockly.CAT_ICON['TOOLBOX_PROCEDURE'] = 'plus-outline';
 Blockly.CAT_ICON['TOOLBOX_COMMUNICATION'] = 'messages';
 Blockly.CAT_ICON['TOOLBOX_IMAGE'] = 'image';
-
-/**
+Blockly.CAT_ICON["TOOLBOX_QISKIT"] = "beaker";
+Blockly.CAT_ICON["TOOLBOX_RNG"] = "arrow-shuffle";
+Blockly.CAT_ICON["TOOLBOX_CIRCUITS"] = "flow-parallel";
+Blockly.CAT_ICON["TOOLBOX_GATES"] = "puzzle";
+Blockly.CAT_ICON["TOOLBOX_JOBS"] = "clipboard";/**
  * Sprited icons and images.
  */
 Blockly.SPRITE = {
